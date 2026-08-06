@@ -34,7 +34,7 @@ struct FindMaxIndex {
         print("▶️ Запуск: '📒 IPO + EDGE CASES'")
 
         
-        let numbers: [Int] = []
+        let _: [Int] = []
         func getMax(_ numbers: [Int]) -> Int? {
             guard !numbers.isEmpty else {
                 return nil

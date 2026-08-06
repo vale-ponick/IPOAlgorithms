@@ -8,5 +8,6 @@
 import Foundation
 
 // --- Вызов активных тем ---
-FindMaxIndex.run()
-
+// FindMaxIndex.run()
+// StarTrekMedicalScanner.run()
+FindSecondMax.run()
