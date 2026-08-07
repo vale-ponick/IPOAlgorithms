@@ -10,4 +10,5 @@ import Foundation
 // --- Вызов активных тем ---
 // FindMaxIndex.run()
 // StarTrekMedicalScanner.run()
-FindSecondMax.run()
+// FindSecondMax.run()
+ControlSpeedCar.run()
