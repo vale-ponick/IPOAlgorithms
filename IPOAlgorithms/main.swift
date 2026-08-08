@@ -12,4 +12,5 @@ import Foundation
 // StarTrekMedicalScanner.run()
 // FindSecondMax.run()
 // ControlSpeedCar.run()
-ApproveMicroloan.run()
+// ApproveMicroloan.run()
+AppStorePurchase.run()
