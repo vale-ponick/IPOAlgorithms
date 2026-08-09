@@ -54,7 +54,7 @@ struct SecuritySystemOfEnterprise {
             
             // Доступ к критическим системам
             func accessMainComputer(_ requiredLevel: Int) -> String {
-                guard let clearance = sequrtyClearance else {
+                guard let clearance = securityClearance else {
                     return "🔴 ACCESS DENIED: Missing ID"
                     }
                 if clearance < 1  && clearance > 10 {
@@ -64,22 +64,22 @@ struct SecuritySystemOfEnterprise {
             }
         }
         // MARK: - TESTS
-                print(CrewMember(name: "First Officer Spock", sequrtyClearance: 10).accessMainComputer(7))
+        print(CrewMember(name: "First Officer Spock", securityClearance: 10).accessMainComputer(7))
                 // Выведет: Access granted to Main Computer (Допуск 10 >= 7)
                 
-                print(CrewMember(name: "First Officer Spock", sequrtyClearance: 10).enterComandBridge())
+        print(CrewMember(name: "First Officer Spock", securityClearance: 10).enterComandBridge())
                 // Выведет: Welcome to command Bridge, First Officer Spock! (Допуск 10 >= 7)
                 
-                print(CrewMember(name: "Captain James Kirk", sequrtyClearance: 8).accessMainComputer(9))
+        print(CrewMember(name: "Captain James Kirk", securityClearance: 8).accessMainComputer(9))
                 // Выведет: Access denied: Insufficient level (Допуск 8 < 9)
                 
-                print(CrewMember(name: "Ensign Pavel Chekov", sequrtyClearance: 2).enterComandBridge())
+        print(CrewMember(name: "Ensign Pavel Chekov", securityClearance: 2).enterComandBridge())
                 // Выведет: Access denied: Low clearance (Допуск 2 < 7, но теперь без паники датчика!)
                 
-                print(CrewMember(name: "Alien Anomaly", sequrtyClearance: nil).accessMainComputer(5))
+        print(CrewMember(name: "Alien Anomaly", securityClearance: nil).accessMainComputer(5))
                 // Выведет: 🔴 ACCESS DENIED: Missing ID
                 
-                print(CrewMember(name: "Hacker Khahn", sequrtyClearance: 99).enterComandBridge())
+        print(CrewMember(name: "Hacker Khahn", securityClearance: 99).enterComandBridge())
                 // Выведет: 🔴 SECURITY ALERT: Invalid clearance (Поймали взлом!)
     }
 }
