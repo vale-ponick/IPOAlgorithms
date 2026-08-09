@@ -9,9 +9,9 @@ import Foundation
 
 struct SecuritySystemOfEnterprise {
     static func run() {
-        print("▶️ Run: 🚀 Security System of 'Enterprise'") // ▶️ Run: 🚀 Security System of 'Enterprise'
+        print("▶️ Run: 🌌 Security System of 'Enterprise'") // ▶️ Run: 🌌 Security System of 'Enterprise'
         /*
-         📋 TS: «🚀 Security System of 'Enterprise'»
+         📋 TS: «🌌 Security System of 'Enterprise'»
          Напиши софт для системы безопасности корабля + struct CrewMember. У каждого члена экипажа есть имя и уровень допуска (Security Clearance) от 1 до 10. Допуск может не прийти (nil).
          
          Edge Cases:🛡️ для обоих методов:
@@ -24,24 +24,25 @@ struct SecuritySystemOfEnterprise {
          - Синтаксис: Скобки пустые, так как метод берет допуск из самой структуры.
          - Выход: Если допуск ок ➡️ "Welcome to command Bridge, [Имя офицера]!", иначе ➡️ "Access denied: Low clearance".
          
-         📥 Метод 2: Доступ к критическим системам (Параметр НЕОБХОДИМ)
-         - Имя метода: accessMainComputer
-         - Параметр в скобках: requiredLevel: Int (требуемый уровень допуска для конкретной программы Главного Компа, который компьютер узнает только в момент вызова? логику человеческую исправить).
-         - Правило: Разрешить, если допуск офицера больше или равен переданному requiredLevel.
-         - Выход: Если допуск ок ➡️ "Access granted to system.", иначе ➡️ "Access denied: Insufficient level".
+         📥 Метод 2: Динамический доступ к подсистемам (Параметр НЕОБХОДИМ)
+         Имя метода: accessSystem(_ subsystem: String, requiredLevel: Int)
+         Суть параметра: Метод универсален. Конкретная подсистема (Warp Drive, Shields или Impulse Engines) сама передает методу свое имя и свой строго требуемый уровень секретности (requiredLevel) в момент запроса.
+         Правило: Сравнить внутренний допуск офицера с полученным requiredLevel.Выход: Если допуск ок ➡️ "Access granted to \(subsystem).", иначе ➡️ "Access denied: Insufficient level for \(subsystem).".
          */
+        
+        // вар. 1
         
         struct CrewMember {
             let name: String
-            let sequrtyClearance: Int? // уровень допуска м. НЕ прийти => optional value
+            let securityClearance: Int? // уровень допуска м. НЕ прийти => optional value
             
-            init(name: String, sequrtyClearance: Int?) {
+            init(name: String, securityClearance: Int?) {
                 self.name = name
-                self.sequrtyClearance = sequrtyClearance
+                self.securityClearance = securityClearance
             }
                 // доступ на командный мостик
             func enterComandBridge() -> String { // используем внутр. значение структуры = 'себяшечка'
-                guard let clearance = sequrtyClearance else {
+                guard let clearance = securityClearance else {
                     return "🔴 ACCESS DENIED: Missing ID"
                     }
                 if clearance < 1  || clearance > 10 {
@@ -59,7 +60,7 @@ struct SecuritySystemOfEnterprise {
                 if clearance < 1  && clearance > 10 {
                     return "🔴 SECURITY ALERT: Invalid clearance"
                 }
-                return clearance >= requiredLevel ? "Access granted to Main Computer" : "Access denied: Insufficient level"
+                return clearance >= requiredLevel ? "🌌 Access granted to Main Computer" : "Access denied: Insufficient level"
             }
         }
         // MARK: - TESTS

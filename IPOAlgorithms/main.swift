@@ -14,4 +14,5 @@ import Foundation
 // ControlSpeedCar.run()
 // ApproveMicroloan.run()
 //AppStorePurchase.run()
-SecuritySystemOfEnterprise.run()
+// SecuritySystemOfEnterprise.run()
+SecuritySystemOfEnterprisePro.run()
