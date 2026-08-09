@@ -13,4 +13,5 @@ import Foundation
 // FindSecondMax.run()
 // ControlSpeedCar.run()
 // ApproveMicroloan.run()
-AppStorePurchase.run()
+//AppStorePurchase.run()
+SecuritySystemOfEnterprise.run()
