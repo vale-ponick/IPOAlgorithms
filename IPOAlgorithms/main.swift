@@ -16,4 +16,5 @@ import Foundation
 //AppStorePurchase.run()
 // SecuritySystemOfEnterprise.run()
 // SecuritySystemOfEnterprisePro.run()
-SubspaceCommunicationUSSEnterprise.run()
+// SubspaceCommunicationUSSEnterprise.run()
+watchRotationEnterprise.run()
