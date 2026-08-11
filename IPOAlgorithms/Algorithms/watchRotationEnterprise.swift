@@ -11,13 +11,22 @@ struct watchRotationEnterprise {
     static func run() {
         print("▶️ Run: 🌌🛸 Watch Rotation on 'Enterprise'")
         
-        print("📋 ТЗ: 🌌🛸 Watch Rotation on 'Enterprise': На 'USS Enterprise' установлен строгий график вахт. Офицеры несут службу, одна вахта заканчивается, наступает следующая.Условие: Дан массив имен офицеров. Напиши функцию, которая при каждом вызове возвращает имя следующего офицера на вахту. После последнего — снова первого.")
+        print("📋 ТЗ: «Смена вахт на USS Enterprise: Дан массив имен офицеров. Напиши функцию, которая при каждом вызове возвращает следующего офицера по кругу.")
+        
+        /** Пример: ["Picard", "Riker", "Data"] // → Picard → Riker → Data → Picard → ...
+
+        Edge Cases:
+              - Пустой массив → nil
+              - Один офицер → всегда его") */
         
         let officers = ["Spock", "Leonard McCoy", "Montgomery Scott", "LNyota Uhura", "Hikaru Sulu", "Pavel Chekov", "James T.Kirk"]
         var index = 0 // выносим ЗА функцию, чтобы индекс сохранял свое состояние
 
-        func getNextWatchRotation() -> String {
-            let currentOfficer = officers[index] // запоминаем ТЕКУЩЕГО офицера, идущего на вахту
+        func getNextWatchRotation() -> String? {
+            guard !officers.isEmpty else {
+                return nil
+            }
+                let currentOfficer = officers[index] // запоминаем ТЕКУЩЕГО офицера, идущего на вахту
             index = (index + 1) % officers.count // формула Cyclic Array forward
             return currentOfficer
         }
@@ -27,11 +36,11 @@ struct watchRotationEnterprise {
         print("--- Auto test with circle for ---")
         index = 0 // 🛠️ СБРОС ИНДЕКСА ДЛЯ ЧИСТОТЫ ТЕСТА!
         for i in 1...7 {
-            let officer = getNextWatchRotation()
+            let officer = getNextWatchRotation() ?? "⚠️ No officers available"
             print("\(i). 🕓 Watch: \(officer)")
         }
         print("♻️ КРУГ ЗАВЕРШИЛСЯ, ПРОВЕРЯЕМ СБРОС:")
-        print("8. Watch: \(getNextWatchRotation())")
+        print("8. Watch: \(getNextWatchRotation() ?? "⚠️ No officers")")
         
         print("--- Тест через цикл while ---")
         
@@ -39,11 +48,11 @@ struct watchRotationEnterprise {
 
         var counter = 1
         while counter <= 7 {
-            print("\(counter). 🔄 Вахта: \(getNextWatchRotation())")
+            print("\(counter). 🔄 Вахта: \(getNextWatchRotation() ?? "⚠️ No officers available")")
             counter += 1
         }
         print("♻️ КРУГ ЗАВЕРШИЛСЯ, ПРОВЕРЯЕМ СБРОС:")
-        print("8. Watch: \(getNextWatchRotation())")
+        print("8. Watch: \(getNextWatchRotation() ?? "⚠️ No officers available")")
         
         // var. 3 PRO 'swift-style': Custom Iterator
         print("--- Тест через цикл PRO 'swift-style': Custom Iterator ---")
@@ -53,7 +62,7 @@ struct watchRotationEnterprise {
             print("\(index + 1). ⏳ Watch: \(officer)")
         }
         print("♻️ КРУГ ЗАВЕРШИЛСЯ, ПРОВЕРЯЕМ СБРОС:")
-        print("8. Watch: \(getNextWatchRotation())")
+        print("8. Watch: \(getNextWatchRotation() ?? "⚠️ No officers available")")
         
         print("\n🏆 Все тесты успешно завершены!")
     }
