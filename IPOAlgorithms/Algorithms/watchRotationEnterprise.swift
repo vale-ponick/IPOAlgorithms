@@ -38,7 +38,7 @@ struct watchRotationEnterprise {
         // var. 2 while (with limit/stop? by condition)
 
         var counter = 1
-        while counter <= 8 {
+        while counter <= 7 {
             print("\(counter). 🔄 Вахта: \(getNextWatchRotation())")
             counter += 1
         }
