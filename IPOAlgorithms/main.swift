@@ -17,4 +17,6 @@ import Foundation
 // SecuritySystemOfEnterprise.run()
 // SecuritySystemOfEnterprisePro.run()
 // SubspaceCommunicationUSSEnterprise.run()
-watchRotationEnterprise.run()
+// WatchRotationEnterprise.run()
+// WarpEngineEnergy.run()
+BridgeAccessCode.run()
