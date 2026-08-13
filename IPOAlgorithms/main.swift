@@ -19,4 +19,5 @@ import Foundation
 // SubspaceCommunicationUSSEnterprise.run()
 // WatchRotationEnterprise.run()
 // WarpEngineEnergy.run()
-BridgeAccessCode.run()
+// BridgeAccessCode.run()
+EmergencyFrequencies.run()

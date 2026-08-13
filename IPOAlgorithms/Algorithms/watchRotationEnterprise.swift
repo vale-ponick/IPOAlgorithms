@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct watchRotationEnterprise {
+struct WatchRotationEnterprise {
     static func run() {
         print("▶️ Run: 🌌🛸 Watch Rotation on 'Enterprise'")
         
