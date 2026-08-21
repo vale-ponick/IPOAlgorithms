@@ -22,4 +22,7 @@ import Foundation
 // BridgeAccessCode.run()
 // EmergencyFrequencies.run()
 // EngineeringRepairTeams.run()
-BridgeScannersEnterprise.run()
+// BridgeScannersEnterprise.run()
+// PlanetarySignalsAnalyzer.run()
+// TempSensorsanalyzer.run()
+AnaliseTempSensor.run()
